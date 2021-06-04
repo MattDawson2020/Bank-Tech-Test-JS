@@ -5,11 +5,17 @@ class Account {
   }
 
   deposit = (amount) => {
-    console.log(typeof amount)
     if( typeof amount !== 'number') {
       throw new Error('Invalid input type')
     }
     this.balance += amount
+  }
+
+  withdraw = (amount) => {
+    if( typeof amount !== 'number') {
+      throw new Error('Invalid withdrawal request')
+    }
+    this.balance -= amount
   }
 
 }

@@ -23,6 +23,29 @@ describe("Transaction", function() {
     });
 
   });
+
+  describe("#withdraw", function() {
+
+    beforeEach(function() {
+      account.deposit(1000)
+    })
+
+    it("Can withdraw funds", function() {
+      account.withdraw(500)
+      expect(account.balance).toEqual(500)
+    });
+
+    it("Can withdraw decimals", function() {
+      account.withdraw(500.95)
+      expect(account.balance).toEqual(499.05)
+    });
+
+    it("Can only withdraw integers and floats", function() {
+      expect(function() { account.withdraw('money') }).toThrowError(Error, 'Invalid withdrawal request')
+      expect(function() { account.withdraw([500]) }).toThrowError(Error, 'Invalid withdrawal request')
+    });
+
+  });
   
  
 });
