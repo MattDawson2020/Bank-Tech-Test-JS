@@ -15,7 +15,9 @@ class Account {
 
   withdraw = (amount) => {
     if( typeof amount !== 'number') {
-      throw new Error('Invalid withdrawal request')
+      throw new Error('Invalid withdrawal request') 
+    } else if (amount > this.balance ) {
+      throw new Error('Insufficient funds') 
     }
     this.balance -= amount
     this.transaction_history.push(new Transaction(new Date(), -amount, this.balance))

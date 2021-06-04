@@ -50,6 +50,10 @@ describe("Transaction", function() {
       expect(function() { account.withdraw([500]) }).toThrowError(Error, 'Invalid withdrawal request')
     });
 
+    it("Cannot withdraw below 0", function() {
+      expect(function() { account.withdraw(1001) }).toThrowError(Error, 'Insufficient funds')
+    });
+
     it('Creates and stores a transaction object with a withdrawal', function(){
       account.withdraw(500)
       expect(account.transaction_history[account.transaction_history.length -1].amount).toEqual(-500)
