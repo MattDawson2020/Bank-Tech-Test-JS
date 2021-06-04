@@ -22,6 +22,11 @@ describe("Transaction", function() {
       expect(function() { account.deposit([500]) }).toThrowError(Error, "Invalid input type")
     });
 
+    it('Creates and stores a transaction object with a deposit', function(){
+      account.deposit(500)
+      expect(account.transaction_history[0].amount).toEqual(500)
+    });
+
   });
 
   describe("#withdraw", function() {
@@ -43,6 +48,11 @@ describe("Transaction", function() {
     it("Can only withdraw integers and floats", function() {
       expect(function() { account.withdraw('money') }).toThrowError(Error, 'Invalid withdrawal request')
       expect(function() { account.withdraw([500]) }).toThrowError(Error, 'Invalid withdrawal request')
+    });
+
+    it('Creates and stores a transaction object with a withdrawal', function(){
+      account.withdraw(500)
+      expect(account.transaction_history[account.transaction_history.length -1].amount).toEqual(-500)
     });
 
   });
