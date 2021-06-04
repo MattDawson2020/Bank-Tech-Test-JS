@@ -1,4 +1,5 @@
-'use strict;'
+'use strict';
+
 describe("Transaction", function() {
   var account;
 
@@ -9,12 +10,12 @@ describe("Transaction", function() {
   describe("#deposit", function() {
     it("Can deposit funds", function() {
       account.deposit(500)
-      expect(account.balance).toEqual(500)
+      expect(account.balance()).toEqual(500)
     });
 
     it("Can deposit decimals", function() {
       account.deposit(500.95)
-      expect(account.balance).toEqual(500.95)
+      expect(account.balance()).toEqual(500.95)
     });
 
     it("Can only deposit integers and floats", function() {
@@ -24,7 +25,7 @@ describe("Transaction", function() {
 
     it('Creates and stores a transaction object with a deposit', function(){
       account.deposit(500)
-      expect(account.transaction_history[0].amount).toEqual(500)
+      expect(account.transactionHistory[0].amount).toEqual(500)
     });
 
   });
@@ -37,12 +38,12 @@ describe("Transaction", function() {
 
     it("Can withdraw funds", function() {
       account.withdraw(500)
-      expect(account.balance).toEqual(500)
+      expect(account.balance()).toEqual(500)
     });
 
     it("Can withdraw decimals", function() {
       account.withdraw(500.95)
-      expect(account.balance).toEqual(499.05)
+      expect(account.balance()).toEqual(499.05)
     });
 
     it("Can only withdraw integers and floats", function() {
@@ -56,7 +57,7 @@ describe("Transaction", function() {
 
     it('Creates and stores a transaction object with a withdrawal', function(){
       account.withdraw(500)
-      expect(account.transaction_history[account.transaction_history.length -1].amount).toEqual(-500)
+      expect(account.transactionHistory[account.transactionHistory.length -1].amount).toEqual(-500)
     });
 
   });
