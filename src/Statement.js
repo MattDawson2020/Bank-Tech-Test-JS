@@ -12,15 +12,16 @@ class Statement{
 
   _formatType = (transaction) => {
     if(transaction.amount > 0) {
-      return ' || ' + `${Math.abs(transaction.amount)}` + ' || || '
+      return ' || ' + `${Math.abs(transaction.amount).toFixed(2)}` + ' || || '
     } else {
-      return ' || || ' + `${Math.abs(transaction.amount)}` + ' || '
+      return ' || || ' + `${Math.abs(transaction.amount).toFixed(2)}` + ' || '
     }
   }
 
   _formatTransaction = (transaction) => {
     return transaction.time.toLocaleDateString() +
-    this._formatType(transaction) + transaction.balance
+    this._formatType(transaction) + 
+    transaction.balance.toFixed(2)
   }
 
 }

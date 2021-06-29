@@ -26,7 +26,7 @@ describe('statement', function() {
     let result = statement.printStatement()
     let time = new Date()
     expect(result).toEqual(
-      `Date || Credit || Debit || Balance\n${time.toLocaleDateString()} || || 500 || 500\n${time.toLocaleDateString()} || 1000 || || 1000`  
+      `Date || Credit || Debit || Balance\n${time.toLocaleDateString()} || || 500.00 || 500.00\n${time.toLocaleDateString()} || 1000.00 || || 1000.00`  
     )
   })
 
