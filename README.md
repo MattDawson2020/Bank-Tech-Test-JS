@@ -76,8 +76,6 @@ I would like the print to be formatted like the diagram
 
 -git clone https://github.com/MattDawson2020/Bank-Tech-Test-JS
 
--bundle
-
 ## Run App
 ### App is currently console based as there was no need to include HTML for a display
 - Within the repo type { open SpecRunner.html } to open the test file to see the tests are passing
