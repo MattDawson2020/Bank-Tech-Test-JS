@@ -26,10 +26,10 @@ describe("Feature test", function() {
   it('Statements are correct whenever they are called', function() {
     var statement;
     var statement2;
-    
+
     account.deposit(1000)
     account.withdraw(500)
-    console.log(account)
+
     statement = new Statement(account)
     let result = statement.printStatement()
     let time = new Date()
@@ -39,7 +39,6 @@ describe("Feature test", function() {
 
     account.deposit(600)
     account.withdraw(450)
-    console.log(account)
     statement2 = new Statement(account)
     let result2 = statement2.printStatement()
     expect(result2).toEqual(
