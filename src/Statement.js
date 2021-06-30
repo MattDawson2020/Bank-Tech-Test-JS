@@ -5,10 +5,14 @@ class Statement{
 
   printStatement = () => {
     let reversedStatement = this.account.transactionHistory.reverse()
-    return ["Date || Credit || Debit || Balance"].concat(
+    let formattedStatement = ["Date || Credit || Debit || Balance"].concat(
     reversedStatement.map((transaction) => 
       this._formatTransaction(transaction))
-    )}
+    )
+    formattedStatement.forEach((line) => {
+      console.log(line)
+    }) 
+  }
 
   _formatType = (transaction) => {
     if(transaction.amount > 0) {
