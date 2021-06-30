@@ -25,9 +25,16 @@ describe('statement', function() {
   it('can print a statement', function() {
     let result = statement.printStatement()
     let time = new Date()
-    expect(result).toEqual(
-      `Date || Credit || Debit || Balance\n${time.toLocaleDateString()} || || 500.00 || 500.00\n${time.toLocaleDateString()} || 1000.00 || || 1000.00`  
-    )
+    expect(result).toEqual([
+      "Date || Credit || Debit || Balance",
+      `${time.toLocaleDateString()} || || 500.00 || 500.00`,
+      `${time.toLocaleDateString()} || 1000.00 || || 1000.00` 
+      // i have decided to return this in the form of an array because:
+      // A: when returning a string with \n to break it up these were returned by the print statement
+      // B: in a more realistic use of JS, the print statement would return an array of strings which would be extracted to HTML
+      // and displayed on the page. 
+      // previous commit has it returned as a divided string, if this is a better method please elaborate how to fix \n issue
+    ])
   })
 
 })
