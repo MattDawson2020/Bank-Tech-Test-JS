@@ -11,12 +11,12 @@ class Account {
 
   deposit = (amount) => {
     this._validate_deposit(amount)
-    this.transactionHistory.push(new Transaction(new Date(), amount, amount += this.balance()))
+    this.transactionHistory.push(new Transaction(new Date(), amount, amount + this.balance()))
   }
 
   withdraw = (amount) => {
     this._validate_withdrawal(amount)
-    this.transactionHistory.push(new Transaction(new Date(), -amount, amount += this.balance()))
+    this.transactionHistory.push(new Transaction(new Date(), -amount, -amount + this.balance()))
   }
 
   _validate_deposit = (amount) => {
