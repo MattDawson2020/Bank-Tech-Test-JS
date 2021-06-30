@@ -72,14 +72,14 @@ I would like the print to be formatted like the diagram
 # How to install and run
 <p>&nbsp;</p>
 
-##Setup
+## Setup
 
 -git clone https://github.com/MattDawson2020/Bank-Tech-Test-JS
 
 -bundle
 
 ## Run App
-###App is currently console based as there was no need to include HTML for a display
+### App is currently console based as there was no need to include HTML for a display
 - Within the repo type { open SpecRunner.html } to open the test file to see the tests are passing
 - Right click and press inspect, to open the developer console, and at the top right click console to open your REPL
 - Create an account object { **account = new Account()** }in the console, which defaults to a balance of 0
