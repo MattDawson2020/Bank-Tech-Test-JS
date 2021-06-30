@@ -3,11 +3,11 @@ class Statement{
     this.account = account
   }
   printStatement = () => {
-    let reversedStatement = this.account.transactionHistory.reverse()
-    return "Date || Credit || Debit || Balance\n" +
-    reversedStatement.map((transaction) => 
-      this._formatTransaction(transaction)).join('\n')
-  }
+    let formattedTransactions = this.account.transactionHistory.map((transaction) => 
+      this._formatTransaction(transaction))
+      return "Date || Credit || Debit || Balance\n" +
+      formattedTransactions.reverse().join('\n')
+  } 
 
   _formatType = (transaction) => {
     if(transaction.amount > 0) {
