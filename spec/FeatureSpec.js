@@ -1,11 +1,11 @@
 describe("Feature test", function() {
-  var account;
+  let account;
   beforeEach(function() {
     account = new Account()
   })
 
   it('User can see correct values on their statement', function() {
-    var statement;
+    let statement;
 
     expect(account.balance()).toEqual(0)
 
@@ -15,8 +15,8 @@ describe("Feature test", function() {
 
     statement = new Statement(account)
 
-    var result = statement.printStatement()
-    var time = new Date()
+    let result = statement.printStatement()
+    let time = new Date()
     expect(result).toEqual(
       `Date || Credit || Debit || Balance\n${time.toLocaleDateString()} || || 500.00 || 500.00\n${time.toLocaleDateString()} || 1000.00 || || 1000.00`  
     )
@@ -24,8 +24,8 @@ describe("Feature test", function() {
   })
 
   it('Statements are correct whenever they are called', function() {
-    var statement;
-    var statement2;
+    let statement;
+    let statement2;
 
     account.deposit(1000)
     account.withdraw(500)
